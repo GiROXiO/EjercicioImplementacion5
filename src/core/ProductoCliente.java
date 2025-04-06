@@ -16,4 +16,11 @@ public class ProductoCliente extends Producto{
         this.cliente = cliente;
         this.curso = curso;
     } 
+    
+    public ProductoCliente(int id, String nombre, LocalDate fechaInicio, float valor) {
+        super(id, nombre, fechaInicio, valor);
+    } 
+
+    
+    
 }

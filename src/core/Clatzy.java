@@ -70,31 +70,57 @@ public class Clatzy {
 
     public void comprarCurso(Cliente cliente, Curso curso, LocalDate fecha, float valor) {
         ArrayList<PlanCliente> planesCliente = cliente.getPlanes();
+        ArrayList<ProductoCliente> productosCliente = cliente.getProductos();
         PlanCliente planActivo = null;
         boolean cubreCurso = false;
-        for (PlanCliente planCliente : planesCliente) {
-            if (planCliente.getEstadoActivo()) {
-                planActivo = planCliente;
+        boolean cursoComprado = false;
+        for(ProductoCliente producto : productosCliente)
+        {
+            if (producto.getId() == curso.getId())
+            {
+                cursoComprado = true;
             }
         }
-        if (planActivo != null) {
-            if (planActivo.getPlan().getValorMaximoCurso() >= curso.getValor()) {
-                System.out.println("El curso esta incluido en el plan del cliente "+cliente.getNombre()+", por lo tanto no debe pagar. Se procede a registrar el curso "+curso.getNombre()+" con costo $0");
-                cubreCurso = true;
+        if (!cursoComprado){
+            for (PlanCliente planCliente : planesCliente) {
+                if (planCliente.getEstadoActivo()) {
+                    planActivo = planCliente;
+                }
+            }
+            if (planActivo != null) {
+                if (planActivo.getPlan().getValorMaximoCurso() >= curso.getValor()) {
+                    System.out.println("El curso esta incluido en el plan del cliente "+cliente.getNombre()+", por lo tanto no debe pagar. Se procede a registrar el curso "+curso.getNombre()+" con costo $0");
+                    cliente.addProducto(new ProductoCliente(curso.getId(), curso.getNombre(), curso.getFechaInicio(), curso.getValor()));
+                    cubreCurso = true;
+                }
+            }
+            if (!cubreCurso) {
+                if (valor == curso.getValor()) {
+                    System.out.println("El cliente " + cliente.getNombre() + " compro exitosamente el curso " + curso.getNombre());
+                    cliente.addProducto(new ProductoCliente(curso.getId(), curso.getNombre(), curso.getFechaInicio(), curso.getValor()));
+
+                } else {
+                    System.out.println("El cliente " + cliente.getNombre() + " no pago el valor correcto por el curso " + curso.getNombre());
+                }
             }
         }
-        if (!cubreCurso) {
-            if (valor == curso.getValor()) {
-                System.out.println("El cliente " + cliente.getNombre() + " compro exitosamente el curso " + curso.getNombre());
-                
-            } else {
-                System.out.println("El cliente " + cliente.getNombre() + " no pago el valor correcto por el curso " + curso.getNombre());
-            }
+        else
+        {
+            System.out.println("El cliente " + cliente.getNombre() + " ya habia comprado el curso " + curso.getNombre());
         }
     }
 
     public void listAll() {
-
+        for(Cliente cliente : clientes)
+        {
+            System.out.println(cliente.getNombre() + ":");
+            System.out.println("Planes:");
+            for(PlanCliente plan : cliente.getPlanes())
+            {
+                System.out.println(plan.getNombre() + " " + plan.getFechaInicio() + " " + plan.getValor() + plan.getEstadoActivo());
+            }
+            System.out.println("----------------------------------------");
+        }
     }
 
     public void comprarPlan(Cliente cliente, Plan plan, LocalDate date) {
@@ -114,7 +140,7 @@ public class Clatzy {
         }
     }
 
-    public Cliente getClienteMayorIngreso() {
+    public String getClienteMayorIngreso() {
         float mayorIngreso = 0f;
         Cliente clienteMayorIngreso = null;
         for (Cliente cliente : clientes) {
@@ -127,6 +153,6 @@ public class Clatzy {
                 clienteMayorIngreso = cliente;
             }
         }
-        return clienteMayorIngreso;
+        return clienteMayorIngreso.getNombre();
     }
 }
