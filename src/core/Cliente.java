@@ -15,6 +15,10 @@ public class Cliente extends Persona{
     public PlanCliente getPlan(int index) {
         return this.planes.get(index);
     }
+
+    public ArrayList<PlanCliente> getPlanes() {
+        return planes;
+    }
     
     public void addPlan(PlanCliente plan){
         this.planes.add(plan);
@@ -23,4 +27,26 @@ public class Cliente extends Persona{
     public void addProducto(ProductoCliente producto){
         this.productos.add(producto);
     }
+
+    public ArrayList<ProductoCliente> getProductos() {
+        return productos;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    
+    
 }
