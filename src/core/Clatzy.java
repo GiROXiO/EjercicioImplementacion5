@@ -15,8 +15,6 @@ public class Clatzy {
         this.cursos = new ArrayList<>();
         this.planes = new ArrayList<>();
     }
-    
-    public Cliente getCliente()
 
     public void addInstructor(String nombre, String cedula, String telefono, String email){
         this.instructores.add(new Instructor(nombre, cedula, telefono, email));
@@ -51,6 +49,26 @@ public class Clatzy {
         {
             System.out.println("El cliente "+ cliente.getNombre() +" ya tiene un plan activo");
         }
+    }
+    
+    public Cliente getClienteMayorIngreso()
+    {
+        float mayorIngreso = 0f;
+        Cliente clienteMayorIngreso = null;
+        for(Cliente cliente : clientes)
+        {
+            float valorPagado = 0f;
+            for (Producto producto : cliente.getProductos())
+            {
+                valorPagado += producto.getValor();
+            }
+            if (valorPagado > mayorIngreso)
+            {
+                mayorIngreso = valorPagado;
+                clienteMayorIngreso = cliente;
+            }
+        }
+        return clienteMayorIngreso;
     }
 
 }
