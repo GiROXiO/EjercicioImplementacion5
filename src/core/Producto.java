@@ -10,10 +10,11 @@ public abstract class Producto {
     protected boolean estadoActivo;
     protected float valor;
 
-    public Producto(int id, String nombre, LocalDate fechaInicio) {
+    public Producto(int id, String nombre, LocalDate fechaInicio, float valor) {
         this.id = id;
         this.nombre = nombre;
         this.fechaInicio = fechaInicio;
+        this.valor = valor;
     }
     
     public Producto(String nombre, LocalDate fechaInicio, float valor) {

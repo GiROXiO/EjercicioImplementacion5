@@ -17,6 +17,5 @@ public class Curso extends Producto {
     public void addInstructor(Instructor instructor)
     {
         instructores.add(instructor);
-    }
-    
+    } 
 }
