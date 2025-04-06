@@ -5,14 +5,13 @@ import java.util.ArrayList;
 
 public class Curso extends Producto {
     
-    private float valorMaximoCurso;
-    private ArrayList<Plan> planes;
+    private ArrayList<Instructor> instructores;
+    private ArrayList<Producto> productosCliente;
 
-    public Curso(int id, String nombre, LocalDate fechaInicio, LocalDate fechaFin, boolean estadoActivo, float valor, float valorMaximoCurso) {
-        super(id, nombre, fechaInicio, fechaFin, estadoActivo, valor);
-        this.valorMaximoCurso = valorMaximoCurso;
-        this.planes = null;
+    public Curso(int id, String nombre, LocalDate fechaInicio, float valor) {
+        super(id, nombre, fechaInicio, valor);
+        this.instructores = null;
+        this.productosCliente = null;
     }
-    
     
 }
