@@ -34,7 +34,36 @@ public class Clatzy {
         curso.addInstructor(instructor);
         this.cursos.add(curso);
     }
+
+    public Instructor getInstructor(int index){
+        return this.instructores.get(index);
+    }
     
+    public Cliente getCliente(int index){
+        return this.clientes.get(index);
+    }
+    
+    public Plan getPlan(int index){
+        return this.planes.get(index);
+    }
+    
+    public Curso getCurso(int index){
+        return this.cursos.get(index);
+    }
+    
+    public void comprarCurso(Cliente cliente, Curso curso, LocalDate fecha){
+        
+    }
+    
+    public void comprarCurso(Cliente cliente, Curso curso, LocalDate fecha, float valor){
+        
+    }
+    
+    
+    public void listAll(){
+        
+    }
+
     public void comprarPlan(Cliente cliente, Plan plan, LocalDate date)
     {
         if (cliente.getPlanes().isEmpty())
@@ -50,7 +79,7 @@ public class Clatzy {
             System.out.println("El cliente "+ cliente.getNombre() +" ya tiene un plan activo");
         }
     }
-    
+
     public Cliente getClienteMayorIngreso()
     {
         float mayorIngreso = 0f;
@@ -70,5 +99,4 @@ public class Clatzy {
         }
         return clienteMayorIngreso;
     }
-
 }

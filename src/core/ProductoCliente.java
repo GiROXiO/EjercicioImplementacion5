@@ -15,9 +15,5 @@ public class ProductoCliente extends Producto{
         this.nivelAvance = nivelAvance;
         this.cliente = cliente;
         this.curso = curso;
-    }
-    
-    
-    
-    
+    } 
 }

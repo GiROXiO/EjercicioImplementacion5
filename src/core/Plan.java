@@ -27,6 +27,7 @@ public class Plan extends Producto {
         return fecha;
     }
 
+    @Override
     public float getValor() {
         return valor;
     }
@@ -50,10 +51,4 @@ public class Plan extends Producto {
     public boolean isEstadoActivo() {
         return estadoActivo;
     }
-
-    public float getValor() {
-        return valor;
-    }
-    
-    
 }
