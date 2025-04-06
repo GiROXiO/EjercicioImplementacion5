@@ -16,6 +16,7 @@ public class Clatzy {
         this.planes = new ArrayList<>();
     }
     
+
     public void addInstructor(String nombre, String cedula, String telefono, String email){
         this.instructores.add(new Instructor(nombre, cedula, telefono, email));
     }
@@ -27,4 +28,13 @@ public class Clatzy {
     public void addPlan(String nombre, LocalDate fechaInicio, float valor, float valorMaximoCurso){
         this.planes.add(new Plan(nombre, fechaInicio, valor, valorMaximoCurso));
     }
+
+    public void addCurso(int id, String nombre, LocalDate fecha, float valor, Instructor instructor)
+    {
+        Curso curso = new Curso(id, nombre, fecha, valor);
+        curso.addInstructor(instructor);
+        this.cursos.add(curso);
+    }
+    
+
 }

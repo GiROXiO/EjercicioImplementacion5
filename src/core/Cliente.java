@@ -19,4 +19,8 @@ public class Cliente extends Persona{
         this.planes = new ArrayList<>();
         this.productos = new ArrayList<>();
     }
+
+    public ArrayList<PlanCliente> getPlanes() {
+        return planes;
+    }
 }
