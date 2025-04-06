@@ -117,7 +117,12 @@ public class Clatzy {
             System.out.println("Planes:");
             for(PlanCliente plan : cliente.getPlanes())
             {
-                System.out.println(plan.getNombre() + " " + plan.getFechaInicio() + " " + plan.getValor() + plan.getEstadoActivo());
+                System.out.println(plan.getNombre() + " " + plan.getFechaInicio() + " " + plan.getValor() + " " + plan.getEstadoActivo());
+            }
+            System.out.println("\nCursos:");
+            for(ProductoCliente producto : cliente.getProductos())
+            {
+                System.out.println(producto.getNombre() + " " + producto.getFechaInicio()+ " " + producto.getValor() + " True");
             }
             System.out.println("----------------------------------------");
         }
