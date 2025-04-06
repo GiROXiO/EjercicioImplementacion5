@@ -62,6 +62,7 @@ public class Clatzy {
         if (planActivo != null) {
             if (planActivo.getPlan().getValorMaximoCurso() >= curso.getValor()) {
                 System.out.println("El cliente " + cliente.getNombre() + " registro exitosamente el curso " + curso.getNombre());
+                cliente.addProducto(new ProductoCliente(curso.getId(), curso.getNombre(), curso.getFechaInicio(), curso.getValor()));
             } else {
                 System.out.println("El plan del cliente " + cliente.getNombre() + " no cubre el curso " + curso.getNombre());
             }
