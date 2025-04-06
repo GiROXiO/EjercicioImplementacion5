@@ -67,7 +67,7 @@ public class Clatzy {
     public void comprarPlan(Cliente cliente, Plan plan, LocalDate date)
     {
         boolean puedeAdquirirPlan = true;
-        for (Plan planCliente : cliente.getPlanes())
+        for (PlanCliente planCliente : cliente.getPlanes())
         {
             if(planCliente.estadoActivo)
             {
