@@ -16,6 +16,7 @@ public class Clatzy {
         this.planes = new ArrayList<>();
     }
     
+    public Cliente getCliente()
 
     public void addInstructor(String nombre, String cedula, String telefono, String email){
         this.instructores.add(new Instructor(nombre, cedula, telefono, email));
@@ -36,5 +37,20 @@ public class Clatzy {
         this.cursos.add(curso);
     }
     
+    public void comprarPlan(Cliente cliente, Plan plan, LocalDate date)
+    {
+        if (cliente.getPlanes().isEmpty())
+        {
+            
+            PlanCliente planC = new PlanCliente(plan.getId(), plan.getNombre(), plan.getFechaInicio(), plan.getValor(), true, cliente, plan);
+            cliente.addPlan(planC);
+            System.out.println("El cliente " + cliente.getNombre() + " compro exitosamente un plan " + plan.getNombre());
+        }
+        
+        else
+        {
+            System.out.println("El cliente "+ cliente.getNombre() +" ya tiene un plan activo");
+        }
+    }
 
 }

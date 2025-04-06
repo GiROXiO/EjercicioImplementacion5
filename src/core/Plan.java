@@ -14,4 +14,46 @@ public class Plan extends Producto {
         this.valorMaximoCurso = valorMaximoCurso;
         this.planes = null;
     }
+
+    public float getValorMaximoCurso() {
+        return valorMaximoCurso;
+    }
+
+    public ArrayList<Plan> getPlanes() {
+        return planes;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public LocalDate getFechaFin() {
+        return fechaFin;
+    }
+
+    public boolean isEstadoActivo() {
+        return estadoActivo;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+    
+    
 }

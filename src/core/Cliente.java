@@ -23,4 +23,30 @@ public class Cliente extends Persona{
     public ArrayList<PlanCliente> getPlanes() {
         return planes;
     }
+    
+    public void addPlan(PlanCliente plan) {
+        this.planes.add(plan);
+    }
+
+    public ArrayList<ProductoCliente> getProductos() {
+        return productos;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    
+    
 }
