@@ -36,5 +36,35 @@ public class Clatzy {
         this.cursos.add(curso);
     }
     
-
+    public Instructor getInstructor(int index){
+        return this.instructores.get(index);
+    }
+    
+    public Cliente getCliente(int index){
+        return this.clientes.get(index);
+    }
+    
+    public Plan getPlan(int index){
+        return this.planes.get(index);
+    }
+    
+    public Curso getCurso(int index){
+        return this.cursos.get(index);
+    }
+    
+    public void comprarCurso(Cliente cliente, Curso curso, LocalDate fecha){
+        
+    }
+    
+    public void comprarCurso(Cliente cliente, Curso curso, LocalDate fecha, float valor){
+        
+    }
+    
+    public Cliente getClienteMayorIngreso(){
+        return null;
+    }
+    
+    public void listAll(){
+        
+    }
 }
