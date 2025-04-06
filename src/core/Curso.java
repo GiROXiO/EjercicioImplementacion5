@@ -14,4 +14,9 @@ public class Curso extends Producto {
         this.productosCliente = null;
     }
     
+    public void addInstructor(Instructor instructor)
+    {
+        instructores.add(instructor);
+    }
+    
 }
