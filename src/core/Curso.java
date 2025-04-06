@@ -10,8 +10,8 @@ public class Curso extends Producto {
 
     public Curso(int id, String nombre, LocalDate fechaInicio, float valor) {
         super(id, nombre, fechaInicio, valor);
-        this.instructores = null;
-        this.productosCliente = null;
+        this.instructores = new ArrayList<>();
+        this.productosCliente = new ArrayList<>();
     }
     
     public void addInstructor(Instructor instructor)
